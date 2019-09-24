@@ -25,7 +25,8 @@ ontology = None
 if len(sys.argv) == 3:
     ontology = sys.argv[2]
 
-distance_matrix = "/scratch1/NOT_BACKED_UP/dbuchan/interpro/derived/word2vec_E.similarity"
+# distance_matrix = "/scratch1/NOT_BACKED_UP/dbuchan/interpro/derived/word2vec_E.similarity"
+distance_matrix = "domain_markov_distance_matrix.csv"
 go_mapping = "/scratch1/NOT_BACKED_UP/dbuchan/interpro/derived/pfam_go_mapping.csv"
 pfam_sample = "/scratch1/NOT_BACKED_UP/dbuchan/pfam/pfam_random_list.txt"
 final_pfam_domains = "/scratch1/NOT_BACKED_UP/dbuchan/interpro/derived/final_domains_E.dat"
@@ -67,8 +68,9 @@ for domain in all_pfam_domains:
     if domain in go_terms:
         for go in go_terms[domain]:
             if ontology:
-                if ontology in go_namespace[go]:
-                    possible_pfam_go_predictions.add(go)
+                if go in go_namespace:
+                    if ontology in go_namespace[go]:
+                        possible_pfam_go_predictions.add(go)
             else:
                 possible_pfam_go_predictions.add(go)
 

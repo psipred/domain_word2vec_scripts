@@ -75,7 +75,7 @@ scrub final_domains_E.dat for all possible EUK pfam domains that COULD be predic
 
 
 calculate_nn_accuracy.py - aggregates data and calculates the precision, and hit rate
-summarise_accuracy.R - totall the accuracy scores we counted up
+summarise_accuracy.R - total the accuracy scores we counted up
 
 
 10) Annotate DUFs
@@ -162,7 +162,7 @@ AFTER REVIEWERS Comments. Redoing the following steps
     outputs: assignment_statistics.csv
 2) count_gap_classes.py - total up the number of proteins that have at least one of X gap count_gap_classes
     outputs: gap_class_populations.csv
-3) count_go_distrobution - read the pfam to go assignments and spit out
+3) count_go_distribution - read the pfam to go assignments and spit out
       go_counts.txt
    draw_go_counts.R - outputs histogram or less than 250
 4) calculate_average_depth.pl. Take the DUF assignments we made and calculate the distance from root for each term (for histogram) and the average depth.  Also edit_obo.py to output a version of the obo where MF has no 'relationship: part_of' links to BP. Produces: duf_annotation_depths.csv > duf_annotation_depths_list.csv
@@ -175,4 +175,8 @@ draw_depth_histogram.R - calcualtes the mean depth and the distribution
 columns to build distance matrix
   first_order_distance_matrix.csv - distance matrix derived from first order markov transition probabilities
 7) calculate_markov_distances.py - opens markov probability matrices and calculates distances between pairs of domains.
-   domain_distance_matrix.csv
+   domain_markov_distance_matrix.csv
+8) repurpose calculate_nn_accuracy.py to output stats for markov process.
+    e.g: python3 calculate_nn_accuracy.py 1 molecular_function > nn1_markov_accuracy_mf.csv
+      etc...
+   repurpose summarise_accuracy.R - total the accuracy scores we counted up

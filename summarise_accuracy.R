@@ -1,15 +1,15 @@
 pathroot<-"/home"
 if (R.version$os=="darwin13.4.0")     pathroot="/Users"
-nn1_accuracy_data <- read.csv(file=paste(pathroot,"/dbuchan/Code/domain_word2vec/nn1_accuracy_with_recall.csv", sep=""), check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
-nn3_accuracy_data <- read.csv(file=paste(pathroot,"/dbuchan/Code/domain_word2vec/nn3_accuracy_with_recall.csv", sep=""), check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
-nn5_accuracy_data <- read.csv(file=paste(pathroot,"/dbuchan/Code/domain_word2vec/nn5_accuracy_with_recall.csv", sep=""), check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
-nn10_accuracy_data <- read.csv(file=paste(pathroot,"/dbuchan/Code/domain_word2vec/nn10_accuracy_with_recall.csv", sep=""), check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
+nn1_accuracy_data <- read.csv(file=paste(pathroot,"/dbuchan/Code/domain_word2vec/nn1_markov_accuracy.csv", sep=""), check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
+nn3_accuracy_data <- read.csv(file=paste(pathroot,"/dbuchan/Code/domain_word2vec/nn3_markov_accuracy.csv", sep=""), check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
+nn5_accuracy_data <- read.csv(file=paste(pathroot,"/dbuchan/Code/domain_word2vec/nn5_markov_accuracy.csv", sep=""), check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
+nn10_accuracy_data <- read.csv(file=paste(pathroot,"/dbuchan/Code/domain_word2vec/nn10_markov_accuracy.csv", sep=""), check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
 nn1_subset <- nn1_accuracy_data[nn1_accuracy_data$`No. True` != 0, ]
 nn3_subset <- nn3_accuracy_data[nn1_accuracy_data$`No. True` != 0, ]
 nn5_subset <- nn5_accuracy_data[nn1_accuracy_data$`No. True` != 0, ]
 nn10_subset <- nn10_accuracy_data[nn1_accuracy_data$`No. True` != 0, ]
 
-results_table_with_recall <- data.frame("K" = c(1,3,5,10),
+results_table_markov <- data.frame("K" = c(1,3,5,10),
                             "Mean Precision" = c(mean(nn1_subset$Precision), mean(nn3_subset$Precision), mean(nn5_subset$Precision), mean(nn10_subset$Precision)),
                             "Mean Accuracy" = c(mean(nn1_subset$Accuracy), mean(nn3_subset$Accuracy), mean(nn5_subset$Accuracy), mean(nn10_subset$Accuracy)),
                             "Mean Recall" = c(mean(nn1_subset$Recall), mean(nn3_subset$Recall), mean(nn5_subset$Recall), mean(nn10_subset$Recall)),

@@ -171,9 +171,6 @@ draw_depth_histogram.R - calcualtes the mean depth and the distribution
 5) calculate_transition_table.py - calculate markov chain transitions outputs
   first_order_tranistion_counts.csv - counts of all the transitions
   first_order_transition_probs.csv - probabilities of the transitions
-6) calculate_nearest_markov_neighbour.py - take probabilites and compare rows and
-columns to build distance matrix
-  first_order_distance_matrix.csv - distance matrix derived from first order markov transition probabilities
 7) calculate_markov_distances.py - opens markov probability matrices and calculates distances between pairs of domains.
    domain_markov_distance_matrix.csv
 8) repurpose calculate_nn_accuracy.py to output stats for markov process.

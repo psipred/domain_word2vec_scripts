@@ -1,0 +1,8 @@
+euk_go_pfam_ss.txt
+test_out
+test_parse.dat
+test*
+transform_angles.csv
+markov_first_order_counts.csv
+markov_first_order_probs.csv
+domain_markov_distance_matrix.csv

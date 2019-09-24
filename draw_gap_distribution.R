@@ -1,0 +1,10 @@
+library(ggplot2)
+
+dat_gap <- read.csv(file="/scratch0/NOT_BACKED_UP/dbuchan/projects/interpro_word2vec/inter_domain_sizes.csv", header=FALSE, check.names=FALSE, strip.white = TRUE, sep=",",na.strings= c("NA", " ", ""))
+colnames(dat_gap)<-c("protein_name","gap_lengths")
+na_rows <- subset(dat_gap, is.na(dat_gap$gap_lengths))
+truncated_gaps <- subset(dat_gap, dat_gap$gap_lengths<1400)
+alt_df<-transform(truncated_gaps, group=cut(gap_lengths, breaks=c(0,100,200,300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500), labels=c("100","200","300","400","500","600","700","800","900","1000","1100","1200","1300","1400","1500")))
+aggregated_gaps <- do.call(data.frame,aggregate(gap_lengths~group, alt_df, FUN=function(x) c(Count=length(x))))
+ggplot(aggregated_gaps, aes(x=group, y=gap_lengths))+geom_bar(stat="identity")
+ggsave("/scratch0/NOT_BACKED_UP/dbuchan/projects/interpro_word2vec/gaps_distribution.png", width=10, height=7, dpi=300)

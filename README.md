@@ -1,8 +1,9 @@
-Source Data:
+# Source Data
+
 uniprot_trembl and id mappings from uniprot May 2017
 interpro 63
 
-Files:
+## Files:
 /scratch0/NOT_BACKED_UP/dbuchan/projects/interpro_word2vec/
 /scratch1/NOT_BACKED_UP/dbuchan/interpro/
 
@@ -61,7 +62,7 @@ annotate_pfam_go.py: read in interpro2go to get ipr to GO mapping. Read in
                      associated with which pfam domains
                      PRODUCES: pfam_go_mapping.csv
 
-Analysis
+# Analysis
 
 7) get the pfam domain list and extract the DUFs
 used grep to produce
@@ -116,7 +117,8 @@ Take transform_angles.csv find examples with very low angles (< 1). Then search 
 can find two proteins that have those two domains. IDEALLY with the other domains being the same.
 
 
-Ancillary/Analysis
+# Ancillary/Analysis
+
 1) calculate gap distribution over the uniprot pfam assignments information
 used in construct_word2vec_strings.py
 calculate_gaps.py: protein2ipr_pfam_taxonomy.dat protein assignments and
@@ -153,10 +155,9 @@ output counts
 8) summary_stats.py
 calcualte the number of euk proteins, GO terms and PFam domains we see
 
+---
 
-----------------------------
-
-AFTER REVIEWERS Comments. Redoing the following steps
+# AFTER REVIEWERS Comments. Redoing the following steps
 
 1) calculate_region_counts.py - fraction of interpro sequences which are gap, domain, etc...
     outputs: assignment_statistics.csv

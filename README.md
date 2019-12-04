@@ -30,8 +30,7 @@ map_taxonomy.py: open the uniprot and ncbi tax data and add the taxa_id and
     PRODUCES: protein2ipr_pfam_taxonomy_E.dat
               disorder_regions_taxonomy_E.dat
               masked_regions_taxonomy_E.dat
-------
-
+              
 6) Build the word2vec strings
 combine_domains.py: read disorder_regions_taxonomy.dat and
                     masked_regions_taxonomy.dat then interleave these with
@@ -63,6 +62,7 @@ annotate_pfam_go.py: read in interpro2go to get ipr to GO mapping. Read in
                      PRODUCES: pfam_go_mapping.csv
 
 Analysis
+
 7) get the pfam domain list and extract the DUFs
 used grep to produce
 /scratch1/NOT_BACKED_UP/dbuchan/pfam/DUF_list.txt

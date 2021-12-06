@@ -48,14 +48,17 @@ construct_word2vec_strings.py: Run through the final_domains_E.dat and produce
                                the word2 vec strings
                                PRODUCES: word2vec_input_E.dat
                                          (9,030,650 sentences)
-build_vectors_word2vec.py: read the word3vec_input.dat sentences and train
+7) Build embedding
+build_vectors_word2vec.py: read the word2vec_input.dat sentences and train
                            word2vec
     word2vec training min_count=0
                   size=x? default 100
                         PRODUCES: word2vec.model
+
+8) get distances
 get_distance.py: read the gensim model and output the distance matrix produced
                   PRODUCES: word2vev_E.similarity - cosine similarity matrix
-
+9) annotate the pfam stuff
 annotate_pfam_go.py: read in interpro2go to get ipr to GO mapping. Read in
                      protein2ipr to map uniprot to go via ipr lastly read
                      final_domains_E.dat to work out which GO terms can be

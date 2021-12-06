@@ -143,7 +143,7 @@ for all pairs of eukaryotci GOA terms. based on interpro2go file @ 2017/03/07
 Which are the annotations from quick go which map to
 
 source /scratch0/NOT_BACKED_UP/dbuchan/python2/bin/activate
-
+ 
 http://viewvc.geneontology.org/viewvc/GO-SVN/ontology-releases/2017-03-07/
 fastsemsim --ontology_type GeneOntology --ontology_file /scratch1/NOT_BACKED_UP/dbuchan/GO/gene_ontology.obo --query_ss_type term --tss Lin --query_input ontology --remove_nan --cut 0.0001  --output_file euk_go_pfam_ss.txt --ac_file /scratch1/NOT_BACKED_UP/dbuchan/GO/goa_uniprot_all.gaf.164_euk
 

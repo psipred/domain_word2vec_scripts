@@ -58,7 +58,7 @@ reads the `combined_domains_E.dat` and outputs a smaller file which resolves any
 **SCRIPT**: `construct_word2vec_strings.py`  
 Run through the `final_domains_E.dat` and produce the word2 vec strings  
 **PRODUCES**:  
-``word2vec_input_E.dat`` (9,030,650 sentences)
+`word2vec_input_E.dat` (9,030,650 sentences)
 9) Build embedding  
 **SCRIPT**: `build_vectors_word2vec.py`  
 read the word2vec_input.dat sentences and train word2vec, word2vec training min_count=0, size=x? default 100  

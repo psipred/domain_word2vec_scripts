@@ -13,6 +13,8 @@ interpro 63
 
 ### Scripts and their order
 
+In theory if you run these scripts in order you will regenerate the word2vec model. (good luck!)
+
 1) run pfilt for CC and LC over all of uniprot  
 **SCRIPT**: `parse_masked_regions.py`  
 parse the fasta files which have been masked for lc and cc sequence and output dummy interpro-like domain regions maskedregions.dat  

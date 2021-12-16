@@ -74,9 +74,9 @@ def handle_cache(data):
 
 previous_uniprot = "XXX"
 line_cache = []
-with open("/scratch1/NOT_BACKED_UP/dbuchan/interpro/derived/"
-          "combined_domains_E.dat") as pfam:
-#          "t2.dat") as pfam:
+# with open("/scratch1/NOT_BACKED_UP/dbuchan/interpro/derived/"
+#          "combined_domains_E.dat") as pfam:
+with open("combined_domains_E.dat") as pfam:
     first_line = pfam.readline()
     entries = first_line.split(",")
     line_cache.append(first_line)
